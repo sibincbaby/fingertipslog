@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+				<link rel="manifest" href="/manifest.json">
+				
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+				<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<style>
+#ainfo {
+			width : 96%;	
+				}
+				.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+
+.fa:hover {
+    opacity: 1;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}  
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-whatsapp {
+  background: #007bb5;
+  color:white
+}
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 4px solid #f1f1f1;}
+
+input[type=text],input[type=password],.clbtn , #pass ,input[type=email], select {
+  width: 46%;
+  font-size:18px;
+  padding: 12px 20px;
+  margin: 8px 5px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius:5px;
+}
+
+.clbtn2{
+				font-size:15px;
+				}
+button ,.whatsapp{
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 5px;
+  border: none;
+  cursor: pointer;
+  width: 46%;
+  border-radius:5px;
+  border: 1px solid #ccc;
+  font-size:18px;
+  opacity: 1;
+}
+.whatsapp,.clbtn2, .submit2{
+				  width: 26%;
+				  font-size:15px;
+				}
+.whatsapp{
+				font-size:18px;
+				}
+button:hover {
+  opacity: 1;
+   border: 1px solid #ff1700;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+}
+#form1,#form2 ,h1,#userbtn{
+				
+				display:none;
+				}
+				
+				#textbox1 , .lang2{
+								display:none;
+								}
+	.lang ,.lang2{
+					color : white;
+					float:right;
+					background-color:#4CAF50;
+					border-radius:5px;
+  border: 1px solid #ccc;
+  font-size:14px;
+  opacity: 1;
+					}
+					
+					
+		#textbox1{
+							width: 36%;		
+									}
+
+</style>
+
+</head>
+
+<body style="background:#000;">
+<center>
+<h1 style="color:#fff" ><pre>Fingertips logs         
+</center>
+
+<div>
+<div >
+<pre class="lang">മലയാളം </pre>
+<pre class="lang2">English </pre>
+</div>
+</div>
+<button id="userbtn" class="ubtn">Welcome User</button>
+
+<input class="abtn" type="password" id="textbox1" placeholder="Admin PIN" onfocus="$('#form2').hide()" ></input>
+
+
+<!-- #######. form1 Admin. ####-->
+
+<form id="form1" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off"> 		
+
+<input id="nameField" name="entry.666679004" placeholder="Customer name" type="text" required> 
+<select id="categoryField" name="entry.1045658041 " placeholder="Select Category" required> <option value="Mobile" selected >Mobile</option><option value="">Electricity</option> <option value="">DTH</option>
+<option value="">Landline</option>
+<option value="">Other</option>
+</select> 			
+<input id="mobField" name="entry.1444467384" placeholder="ID/Number" type="text" required>  
+<input id="amount" name="entry.684851906" placeholder="Amount" type="text" required>
+<input id="platform" name="entry.425793897" placeholder="Platform used" type="text">
+<input id="oinfo" name="info" placeholder="Other info" type="text">		
+<button id="clear" type="reset" class="clbtn">Clear all</button>		
+<button id="send" type="submit" class="common_btn">Submit</button>
+</form>
+
+<!-- ####### form2 User start ####-->
+
+<form id="form2" target="_self" onsubmit="return postToGoogle2();" action="" autocomplete="off"> 				
+<input id="nameField2" name="entry.191634511" placeholder="Enter your name" type="text" required> 
+<select id="categoryField2" name="entry.92656817 " placeholder="Select Category" required> <option value="Mobile" selected >Mobile</option><option value="">Electricity</option> <option value="">DTH</option>
+<option value="">Landline</option>
+<option value="">Other</option>
+</select> 			
+<input id="mobField2" name="entry.1050284052" placeholder="ID/Number" type="text" required>  
+<input id="amount2" name="entry.1887818845" placeholder="Amount" type="text" required	>
+</input>		<input id="ainfo" name="entry.1865627812" placeholder="Additional details" type="text">		
+	<button id="clear" type="reset" class="clbtn2">Clear all</button>
+<button id="send" type="submit" class="common_btn submit2">Submit</button>
+<a id="mylink" href="link" class="fa fa-whatsapp whatsapp"></a>
+</form>
+
+<!-- ####### End of User form ####-->
+
+
+<h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Your Request has been posted to <pre>Fingertips Solution's database </pre></h3>
+
+<!-- Add font awesome icons -->
+<a href="https://m.facebook.com/sibin.cbaby" class="fa fa-facebook"></a>
+<a href="https://twitter.com/Sibincbaby" class="fa fa-twitter"></a>
+<a href="https://www.linkedin.com/in/sibin-c-b-7b8343a0" class="fa fa-linkedin"></a>
+
+<a id="mylink" href="https://wa.me/919562456820?text=Hii" class="fa fa-whatsapp"></a>
+<center>
+<div style="color:#fff"> <pre>@sibincbaby </pre></div>
+</center>
+<script>
+$(document).ready(function () { 
+				$("h1").fadeIn()
+				$("#userbtn").fadeIn()
+				$("#form2").fadeIn()
+					});
+	
+	
+	//####### change lanuage to malayalm ######
+	
+					$(".lang").click(function(){			
+					$(".lang").hide();
+					$(".lang2").show();
+					
+				$('#nameField2').attr('placeholder','പേര്');
+$('#mobField2').attr('placeholder','ഐഡി/നമ്പർ');
+$('#amount2').attr('placeholder','തുക');
+$('#ainfo').attr('placeholder','കൂടുതൽ വിവരങ്ങൾ');
+				});
+					
+//####### change lanuage to English######
+$(".lang2").click(function(){			
+					$(".lang2").hide();
+					$(".lang").show();
+					
+				$('#nameField2').attr('placeholder','Your name');
+$('#mobField2').attr('placeholder','ID/Number');
+$('#amount2').attr('placeholder','Amount');
+$('#ainfo').attr('placeholder','Additional details');
+				});
+				
+				
+	///### to change placeholder ##
+$('#categoryField2 DTH').each(function() { 
+				if (this.selected) alert('this option is selected');
+				 else alert('this is not'); });												
+					
+//####to get admin view#####
+					
+$("h1").click(function(){
+				$('.abtn').show();
+				$("#form2").fadeOut();
+		$("#userbtn").text("Go back to User");
+				
+});
+
+
+//#####to send into whatsp #####
+
+$("#mylink").click(function(){
+				console.log("whatsp clickd");
+				
+				
+				var field1 = $("#nameField2").val();
+                var field2 = $("#categoryField2 option:selected").text();
+                var field3 = $("#mobField2").val();
+                var field4 = $("#amount2").val();
+ 				            var field5 = $("#ainfo").val();   
+			                
+ var msg= "It's me "+field1+"!!!\n"+"Go through the details given 👇🏻"+"\n"+"*"+field2+"*"+"\n"+field3+"\nAmount : *₹"+field4+"*"+"\n"+field5;  
+ 
+ if((field3 === "") || (field4 ===""))
+ msg =" Hi ";   
+ else
+ msg = window.encodeURIComponent(msg);      
+ 				            link="https://wa.me/919562456820?text="+msg;
+
+$('#mylink').attr('href', link);
+				});
+
+
+var pin = 9446;
+//######user select button
+$("#textbox1").keyup(function(){ 
+				var check =0;
+var textinput = $('#textbox1').val().substring(0,8); 
+$("#output").val(textinput); 
+  
+ check=textinput;
+ console.log(check);
+ if(check==pin){
+ 				$('#form1').fadeIn();
+ 				$('#form2').hide();
+ 				$('h1').html('<pre>Fingertips logs - ∆dm!n </pre>');
+ 				}
+ 
+  }); 
+
+//#####script for showing user form ##
+
+$("#userbtn").click(function(){
+				$("#userbtn").text("Welcome User");
+			$('.abtn').fadeOut();
+    	$('#form1').hide();
+    		$('#form2').fadeIn();
+    		$('h1').html('<pre>Fingertips logs         </pre>');
+  });
+  
+$("#adminbtn").click(function(){
+				
+    	$('#form2').hide();
+    		$('#form1').show();
+  });
+
+
+
+//###admin formsend to google sheets ###
+
+function postToGoogle() {
+				
+                var field1 = $("#nameField").val();
+                var field2 = $("#categoryField option:selected").text();
+                var field3 = $("#mobField").val();
+                var field4 = $("#amount").val();
+ 				            var field5 = $("#platform").val();                
+																		var field6=$("#oinfo").val();
+		
+                $.ajax({
+                    url:"https://docs.google.com/forms/d/e/1FAIpQLScRJibwCRFmbNfejobcb2VG4dXL2nA_PN0yYopfoOOJ74Nx0w/formResponse?",
+					data: {"entry.666679004": field1, "entry.1045658041": field2, "entry.1444467384": field3, "entry.684851906": field4, "entry.425793897": field5, "entry.443976397":field6 },
+                    type: "POST",
+                    dataType: "xml",
+                    success: function(d)
+					{
+					},
+					error: function(x, y, z)
+						{https://docs.google.com/forms/d/e/1FAIpQLScRJibwCRFmbNfejobcb2VG4dXL2nA_PN0yYopfoOOJ74Nx0w
+
+							$('#success-msg').show();
+							
+							$('#form1').hide();
+							console.log("form hided");
+							timeFunction()
+							
+							function timeFunction() {             setTimeout(function(){ 
+											$('#success-msg').hide();
+											console.log("After 2 second!"); 
+											$('#form1').show();
+											
+											}, 1500);         } 
+							
+							
+						}
+                });
+                
+				return false;
+				
+            }
+            
+            
+//#####User form to spredsheet#####
+
+function postToGoogle2() {
+				
+                var field1 = $("#nameField2").val();
+                var field2 = $("#categoryField2 option:selected").text();
+                var field3 = $("#mobField2").val();
+                var field4 = $("#amount2").val();
+ 				            var field5 = $("#ainfo").val();                
+																	
+																	console.log(field1);
+																	console.log(field2);
+																	console.log(field3);
+																	console.log(field4);
+																	console.log(field5);
+		
+                $.ajax({
+                    url:"https://docs.google.com/forms/d/e/1FAIpQLScVbTSgrkZj_KhBnT68lxuqVCYOY2SilSlpRnOr_HVSxaOe9A/formResponse?",
+					data: {"entry.191634511": field1, "entry.92656817": field2, "entry.1050284052": field3, "entry.1887818845": field4, "entry.1865627812": field5},
+                    type: "POST",
+                    dataType: "xml",
+                    success: function(d)
+					{
+					},
+					error: function(x, y, z)
+						{https://docs.google.com/forms/d/e/1FAIpQLScRJibwCRFmbNfejobcb2VG4dXL2nA_PN0yYopfoOOJ74Nx0w
+
+							$('#success-msg').show();
+							
+							$('#form2').hide();
+							console.log("form hided");
+							timeFunction()
+							
+							function timeFunction() {             setTimeout(function(){ 
+											$('#success-msg').hide();
+											console.log("After 2 second!"); 
+											$('#form2').show();
+											
+											}, 1500);         } 
+							
+							
+						}
+                });
+                
+				return false;
+				
+            }
+</script>
+</body>
+</html>
